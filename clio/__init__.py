@@ -36,11 +36,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import clio.title
 import clio.list
+import clio.tabel
 
-__all__=['title','list']
+__all__=['title','list','tabel']
 
 dotitle=clio.title.dotitle
 dolist=clio.list.dolist
+dotabel=clio.tabel.dotabel
 
 def dotext(text):
     return text

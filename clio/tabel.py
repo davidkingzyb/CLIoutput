@@ -37,7 +37,42 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 def dotabel(tabel,t='row'):
     if t=='row':
         output=tabelrow(tabel)
+    elif t=='col':
+        output=tabelcol(tabel)
     return output
+
+def tabelcol(tabel):
+    maxarr=0
+    maxtitle=0
+    for k,v in tabel.iteritems():
+        if len(v)>maxarr:
+            maxarr=len(v)
+        if len(str(k))>maxtitle:
+            maxtitle=len(str(k))
+    
+    maxlen=[0 for ii in range(maxarr)]
+    i=0
+    while i<maxarr:
+        for v in tabel.values():
+            if i<len(v):
+                if len(str(v[i]))>maxlen[i]:
+                    maxlen[i]=len(str(v[i]))
+        i=i+1       
+    #print(maxlen)
+    hr='+-'+'-'*maxtitle+'-++'
+    for x in maxlen:
+        hr=hr+'-'+'-'*x+'-+'
+    output=hr+'\n'
+    for k,v in tabel.iteritems():
+        output=output+'| '+str(k)+' '*(maxtitle-len(str(k)))+' ||'
+        for j in range(len(maxlen)):
+            if j<len(v):
+                output=output+' '+str(v[j])+' '*(maxlen[j]-len(str(v[j])))+' |'
+            else:
+                output=output+' '+' '*maxlen[j]+' |'
+        output=output+'\n'+hr+'\n'
+    return output
+    
 
 def tabelrow(tabel):
     maxlen={}
@@ -98,5 +133,6 @@ def tabelrow(tabel):
 
 
 if __name__ == '__main__':
+    #tabelcol({'a':[1,222,33,33,33,4444],'bbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']})
     print(dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']}))
-    #print(dotabel({'a':[1,222,3,4444],'bbbbbbb':['aa',1,'bbbbbbb'],'cc':['a'],'dd':['d','dd']},'col'))
+    print(dotabel({'a':[1,222,3,4444],'bbbbbbb':['aa',1,'bbbbbbb'],'cc':['a'],'dd':['d','dd']},'col'))
