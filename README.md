@@ -21,7 +21,7 @@ print(clio.dohr(20))
 ###title
 
 
-```py
+```
 print(clio.dotitle('CLIoutput'))
  ________  __         ______                                                  
 |   _____||  |       |_    _|                   _                       _     
@@ -33,7 +33,7 @@ print(clio.dotitle('CLIoutput'))
 
 ###list
 
-```py
+```
 print(clio.dolist(['a','b','c']))
 print(clio.dolist({'a':1,'b':2,'ccc':333}))
 
@@ -48,7 +48,7 @@ ccc  :333
 
 ###tabel
 
-```py
+```
 print(clio.dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']}))
 print(clio.dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']},'col'))
 
