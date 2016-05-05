@@ -14,8 +14,8 @@ Pretty printing in command line
 ##List
 
 - [title](#title):a ctfont title
-- [list](#list):pretty printing list
-- [table](#table):pretty printing table
+- [list](#list-1):pretty printing list
+- [tabel](#tabel):pretty printing table
 - [chart](#chart):pretty printing bar chart
 
 ##USE
