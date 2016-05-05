@@ -56,3 +56,16 @@ j={
 }
 print(clio.dojson(j))
 print(clio.dotree(j))
+c={
+    'aaa':10.8,
+    'bbbbb':20.5,
+    'ccc':14,
+    'dddd':30,
+    'ee':20,
+    'a':2,
+}
+print(clio.dobar(c))
+print(clio.dobar(c,False,'col','$','$'))
+print(clio.dobar(c,True,'col'))
+print(clio.dobar(c,False,'row','$$','$'))
+print(clio.dobar(c,True,'row'))

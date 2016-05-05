@@ -38,14 +38,16 @@ import clio.title
 import clio.list
 import clio.tabel
 import clio.tree
+import clio.chart
 
-__all__=['title','list','tabel','tree']
+__all__=['title','list','tabel','tree','chart']
 
 dotitle=clio.title.dotitle
 dolist=clio.list.dolist
 dotabel=clio.tabel.dotabel
 dotree=clio.tree.dotree
 dojson=clio.tree.dojson
+dobar=clio.chart.dobar
 
 def dotext(text):
     return text
