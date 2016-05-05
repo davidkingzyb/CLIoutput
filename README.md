@@ -23,6 +23,8 @@ print(clio.dohr(20))
 
 ```
 print(clio.dotitle('CLIoutput'))
+
+###################output#####################
  ________  __         ______                                                  
 |   _____||  |       |_    _|                   _                       _     
 |  |      |  |         |  |     _____   __  __ | \_    _______  __  __ | \_   
@@ -52,6 +54,7 @@ ccc  :333
 print(clio.dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']}))
 print(clio.dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']},'col'))
 
+###################output#####################
 +======+=========+====+====+
 | a    | bbbbbbb | dd | cc |
 +======+=========+====+====+
@@ -94,6 +97,7 @@ j={
 print(clio.dojson(j))
 print(clio.dotree(j))
 
+###################output#####################
 {
       "code":0,
       "msg":"hello",
