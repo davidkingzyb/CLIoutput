@@ -33,10 +33,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 2016/05/02 by DKZ https://davidkingzyb.github.io
 
 """
+import re
 
-def dotabel(tabel,t='row'):
+def dotabel(tabel,t='row',issplit=False):
     if t=='row':
         output=tabelrow(tabel)
+        if not issplit:
+            output=removesplit(output)
     elif t=='col':
         output=tabelcol(tabel)
     return output
@@ -128,11 +131,16 @@ def tabelrow(tabel):
         output=output+l[:-1]+'\n'
     return output
 
-
+def removesplit(output):
+    split=re.search('\+\-(.+?)\n',output,re.M).group()
+    output=re.sub('\+\-(.+?)\n','',output)
+    output+=split;
+    return output
 
 
 
 if __name__ == '__main__':
     #tabelcol({'a':[1,222,33,33,33,4444],'bbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']})
-    print(dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']}))
+    output=dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']})
+    print(output)
     print(dotabel({'a':[1,222,3,4444],'bbbbbbb':['aa',1,'bbbbbbb'],'cc':['a'],'dd':['d','dd']},'col'))
