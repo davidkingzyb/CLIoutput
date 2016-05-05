@@ -37,41 +37,38 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import json
 import re
 
+def dojson(j):
+    output=json.dumps(j,sort_keys=True,indent=6,separators=(',',':'))
+    return output
 
-if __name__ == '__main__':
-    j={'root':[
-        {'ao1':[
-            'bv',
-            {'boo':'o1'},
-            {'boo2':[
-                'boov','boo',1
-            ]}
-        ]},
-        'av',
-        1,
-        {'ao2':{
-            'a2a':'aa',
-            'a2b':{
-                'cc':[1,2,3],
-                'ccc':'cccv',
-                'cccc':4
-            }
-        }}
-    ]}
+def dotree(j):
     output=json.dumps(j,sort_keys=True,indent=6,separators=('',':'))
-    print(output)
-    # output=re.sub('\n +?\[\n','\n',output)
-    # output=re.sub('\n +?\{\n','\n',output)
+    output=re.sub('\n +?\[\n','\n',output)
+    output=re.sub('\n +?\{\n','\n',output)
     output=re.sub('\n +?\}\n','\n',output)
     output=re.sub('\n +?\]\n','\n',output)
     output=re.sub('\[','',output)
-    # output=re.sub('\{','',output)
-    # output=re.sub('\}','',output)
+    output=re.sub('\{','',output)
+    output=re.sub('\}','',output)
     output=re.sub('\]','',output)
     def addleaf(matched):
         m=matched.group(0)
         return '|---'+m[-1:]
     output=re.sub('    \S',addleaf,output)
+    return output
 
 
-    print(output)
+if __name__ == '__main__':
+
+    j={
+        'code':0,
+        'msg':'hello',
+        'result':{
+            'a':1,
+            'b':2,
+            'c':[1,2,3],
+        }
+    }
+    print(dojson(j))
+    print(dotree(j))
+

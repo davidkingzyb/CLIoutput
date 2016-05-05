@@ -37,12 +37,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import clio.title
 import clio.list
 import clio.tabel
+import clio.tree
 
-__all__=['title','list','tabel']
+__all__=['title','list','tabel','tree']
 
 dotitle=clio.title.dotitle
 dolist=clio.list.dolist
 dotabel=clio.tabel.dotabel
+dotree=clio.tree.dotree
+dojson=clio.tree.dojson
 
 def dotext(text):
     return text

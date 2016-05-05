@@ -79,3 +79,43 @@ print(clio.dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','
 +---------++----+-----+---------+----+----+------+
 ```
 
+###tree
+
+```
+j={
+    'code':0,
+    'msg':'hello',
+    'result':{
+        'a':1,
+        'b':2,
+        'c':[1,2,3],
+    }
+}
+print(clio.dojson(j))
+print(clio.dotree(j))
+
+{
+      "code":0,
+      "msg":"hello",
+      "result":{
+            "a":1,
+            "b":2,
+            "c":[
+                  1,
+                  2,
+                  3
+            ]
+      }
+}
+
+  |---"code":0
+  |---"msg":"hello"
+  |---"result":
+        |---"a":1
+        |---"b":2
+        |---"c":
+              |---1
+              |---2
+              |---3
+```
+
