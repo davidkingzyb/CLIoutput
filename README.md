@@ -24,6 +24,14 @@ Pretty printing in command line
 import clio
 print(clio.dotext('CLIoutput\n'))
 print(clio.dohr(20))
+...
+
+print(clio.dotitle('CLIoutput'))
+print(clio.dolist(['a','b','c']))
+print(clio.dotabel(d))
+print(clio.dojson(j))
+print(clio.dotree(j))
+print(clio.dobar(c))
 ```
 
 ###title
