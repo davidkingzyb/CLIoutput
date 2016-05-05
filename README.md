@@ -51,8 +51,14 @@ ccc  :333
 ###tabel
 
 ```
-print(clio.dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']}))
-print(clio.dotabel({'a':[1,222,33,33,33,4444],'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],'cc':['a'],'dd':['d','dd']},'col'))
+d={
+    'a':[1,222,33,33,33,4444],
+    'bbbbbbb':['aa',1,'bbbbbbb','aa','bb'],
+    'cc':['a'],
+    'dd':['d','dd']
+  }
+print(clio.dotabel(d))
+print(clio.dotabel(d,'col'))
 
 ###################output#####################
 +======+=========+====+====+
