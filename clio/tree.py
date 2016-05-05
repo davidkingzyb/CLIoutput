@@ -38,7 +38,7 @@ import json
 import re
 
 def dojson(j):
-    output=json.dumps(j,sort_keys=True,indent=6,separators=(',',':'))
+    output=json.dumps(j,sort_keys=True,indent=4,separators=(',',':'))
     return output
 
 def dotree(j):

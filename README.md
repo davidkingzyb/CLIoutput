@@ -105,17 +105,17 @@ print(clio.dotree(j))
 
 ###################output#####################
 {
-      "code":0,
-      "msg":"hello",
-      "result":{
-            "a":1,
-            "b":2,
-            "c":[
-                  1,
-                  2,
-                  3
-            ]
-      }
+    "code":0,
+    "msg":"hello",
+    "result":{
+        "a":1,
+        "b":2,
+        "c":[
+            1,
+            2,
+            3
+        ]
+    }
 }
 
   |---"code":0
@@ -128,4 +128,8 @@ print(clio.dotree(j))
               |---2
               |---3
 ```
+
+##License
+
+**MIT**
 
