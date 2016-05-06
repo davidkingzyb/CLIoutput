@@ -9,7 +9,8 @@
 
 
 a python lib for making a command line interface 
-Pretty printing in command line
+
+and do pretty printing in command line
 
 ##List
 
