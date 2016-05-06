@@ -33,3 +33,39 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 2016/05/06 by DKZ https://davidkingzyb.github.io
 
 """
+try: input = raw_input
+except NameError: pass
+def doppt(nowpage,pagearr):
+    inp=input()
+    if inp=='' or inp=='n' or inp=='next':
+        nowpage+=1
+        if nowpage<len(pagearr):
+            print(pagearr[nowpage])
+            doppt(nowpage,pagearr)
+        else:
+            nowpage-=1
+            print(pagearr[nowpage])
+            print('this is last page.')
+            doppt(nowpage,pagearr)
+    elif inp=='q' or inp=='quit':
+        print('power by CLIoutput , Thanks watching!')
+    elif inp=='p' or inp=='prev':
+        nowpage-=1
+        if nowpage>=0:
+            print(pagearr[nowpage])
+            doppt(nowpage,pagearr)
+        else:
+            nowpage=0
+            print(pagearr[nowpage])
+            print('this is first page.')
+            doppt(nowpage,pagearr)
+    elif inp=='g' or inp=='go':
+        pagenum=input()
+        pagenum=int(pagenum)-1
+        if pagenum<len(pagearr):
+            nowpage=pagenum
+            print(pagearr[nowpage])
+            doppt(nowpage,pagearr)
+        else:
+            print('this page is out of range.')
+            doppt(nowpage,pagearr)

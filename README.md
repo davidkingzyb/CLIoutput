@@ -18,6 +18,7 @@ and do pretty printing in command line
 - [list](#list-1):pretty printing list
 - [tabel](#tabel):pretty printing table
 - [chart](#chart):pretty printing bar chart
+- [ppt](#ppt):use clio make ppt
 
 ##USE
 
@@ -37,6 +38,7 @@ print(clio.dobar(c))
 
 ###title
 
+- dotitle(title)
 
 ```
 print(clio.dotitle('CLIoutput'))
@@ -57,6 +59,8 @@ print(clio.dotitle('CLIoutput'))
 ```
 print(clio.dolist(['a','b','c']))
 print(clio.dolist({'a':1,'b':2,'ccc':333}))
+
+###################output#####################
 
 a
 b
@@ -261,6 +265,20 @@ unit:%
 |____________________________________________
     a      aaa    ee     dddd   ccc    bbbbb 
    2.06    11.1   20.55   30.83   14.39   21.07  
+```
+
+###ppt
+
+```
+$python clio-pptinit.py
+title:
+testppt
+page num:
+10
+
+$python testppt.py
+<enter>:next page  <p><enter>:prev page  <g><pagenum><enter>go to page num  <q><enter>quit
+
 ```
 
 ##License

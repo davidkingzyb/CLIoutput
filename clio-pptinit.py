@@ -30,29 +30,99 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 |  |_____ |  |_____   _|  |_  |   o   ||  |_| ||  |___|    ___||  |_| ||  |___
 |________||________| |______|  \_____/ |______|\_____/|___|    |______|\_____/
 ==============================================================================
-2016/05/01 by DKZ https://davidkingzyb.github.io
+2016/05/06 by DKZ https://davidkingzyb.github.io
 
 """
 
-import clio.title
-import clio.list
-import clio.tabel
-import clio.tree
-import clio.chart
-import clio.ppt
+output='''
+import clio
+import datetime
 
-__all__=['title','list','tabel','tree','chart','ppt']
+date=datetime.datetime.now().strftime('%Y/%m/%d')
+FOOTER=''
 
-dotitle=clio.title.dotitle
-dolist=clio.list.dolist
-dotabel=clio.tabel.dotabel
-dotree=clio.tree.dotree
-dojson=clio.tree.dojson
-dobar=clio.chart.dobar
-doppt=clio.ppt.doppt
+template="""
+=================================================================================
+%(title)s
+---------------------------------------------------------------------------------
+%(con)s
+----------------------------
+%(nowpage)s/%(totalpage)s %(footer)s
+"""
 
-def dotext(text):
-    return text
+'''
+try: input = raw_input
+except NameError: pass
+print('title:')
+title=input()
+print('page num:')
+PAGENUM=input()
 
-def dohr(length):
-    return '='*length+'\n'
+output+='PAGENUM='+PAGENUM+'\n'
+
+output+='''
+startpage=template%{
+    'title':'',
+    'con':'\\n\\n\\n\\n\\n'+clio.dotitle(\''''+title+'''\')+'\\n\\n                            <'+date+' by DKZ>                \\n\\n\\n',
+    'nowpage':1,
+    'totalpage':PAGENUM,
+    'footer':FOOTER
+}
+'''
+
+for i in range(int(PAGENUM)):
+    if i>1:
+
+        output+='''
+page'''+str(i)+'''=template%{
+    'title':'title',
+    'con':"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""",
+    'nowpage':'''+str(i)+''',
+    'totalpage':PAGENUM,
+    'footer':FOOTER
+}
+'''
+
+output+='''
+endpage=template%{
+    'title':'',
+    'con':'\\n\\n\\n\\n\\n'+clio.dotitle('Thanks!')+'\\n\\n\\n\\n\\n',
+    'nowpage':PAGENUM,
+    'totalpage':PAGENUM,
+    'footer':FOOTER
+}
+'''
+
+output+='pagearr=[startpage,'
+for j in range(int(PAGENUM)):
+    if j>1:
+        output+='page'+str(j)+','
+
+output+='endpage]'
+output+='''
+def main():
+    print(pagearr[0])
+    clio.doppt(0,pagearr)
+
+if __name__ == '__main__':
+    main()
+'''
+
+with open(title+'.py','w') as f:
+    f.write(output)
