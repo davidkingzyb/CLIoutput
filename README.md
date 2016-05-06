@@ -14,11 +14,15 @@ and do pretty printing in command line
 
 ##List
 
-- [title](#title):a ctfont title
-- [list](#list-1):pretty printing list
-- [tabel](#tabel):pretty printing table
-- [chart](#chart):pretty printing bar chart
-- [ppt](#ppt):use clio make ppt
+- [clio](#clio):package
+  - [title](#title):a ctfont title
+  - [list](#list-1):pretty printing list
+  - [tabel](#tabel):pretty printing table
+  - [chart](#chart):pretty printing bar chart
+  - [ppt](#ppt):use clio make ppt
+
+- [CLIoutput.py](#):a clioutput ppt example
+- [clio-pptinit.py](#):make a clioutput ppt
 
 ##USE
 
@@ -269,6 +273,14 @@ unit:%
 
 ###ppt
 
+try
+
+```
+$python CLIoutput.py
+```
+
+make ppt
+
 ```
 $python clio-pptinit.py
 title:
@@ -277,7 +289,7 @@ page num:
 10
 
 $python testppt.py
-<enter>:next page  <p><enter>:prev page  <g><pagenum><enter>go to page num  <q><enter>quit
+<enter>:next page  <p><enter>:prev page  <g><pagenum><enter>:go to page num  <q><enter>:quit
 
 ```
 
