@@ -12,6 +12,8 @@ a python lib for making a command line interface
 
 and do pretty printing in command line
 
+![clio](./clio.gif)
+
 ##List
 
 - [clio](#clio):package
