@@ -14,7 +14,7 @@ template="""
 %(nowpage)s/%(totalpage)s %(footer)s
 """
 
-PAGENUM=6
+PAGENUM=8
 
 startpage=template%{
     'title':'',
@@ -90,9 +90,35 @@ page4=template%{
     'footer':FOOTER
 }
 
-
-
 page5=template%{
+    'title':'tree',
+    'con':"""
+
+        clio.dotree({'clio':{'clio':['title','tree','list','tabel','ppt','chart'],'clio-pptinit':'clio-pptinit.py','CLIoutput':'CLIoutput'}})
+
+"""+clio.dotree({'clio':{'clio':['title','tree','list','tabel','ppt','chart'],'clio-pptinit':'clio-pptinit.py','CLIoutput':'CLIoutput'}})
+,
+    'nowpage':5,
+    'totalpage':PAGENUM,
+    'footer':FOOTER
+}
+
+page6=template%{
+    'title':'bar chart',
+    'con':"""
+
+        clio.dobar({'python':25,'javascript':20,'html':10,'css':5},True)
+
+
+
+"""+clio.dobar({'python':25,'javascript':20,'html':10,'css':5},True)+'\n\n\n\n\n',
+    'nowpage':6,
+    'totalpage':PAGENUM,
+    'footer':FOOTER
+}
+
+
+page7=template%{
     'title':'ppt',
     'con':"""
 
@@ -111,7 +137,7 @@ page5=template%{
 
 
 """,
-    'nowpage':5,
+    'nowpage':7,
     'totalpage':PAGENUM,
     'footer':FOOTER
 }
@@ -123,7 +149,7 @@ endpage=template%{
     'totalpage':PAGENUM,
     'footer':FOOTER
 }
-pagearr=[startpage,page2,page3,page4,page5,endpage]
+pagearr=[startpage,page2,page3,page4,page5,page6,page7,endpage]
 def main():
     print(pagearr[0])
     clio.doppt(0,pagearr)
