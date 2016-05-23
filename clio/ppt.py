@@ -31,7 +31,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 |________||________| |______|  \_____/ |______|\_____/|___|    |______|\_____/
 ==============================================================================
 2016/05/06 by DKZ https://davidkingzyb.github.io
-
+github: https://github.com/davidkingzyb/CLIoutput
 """
 try: input = raw_input
 except NameError: pass

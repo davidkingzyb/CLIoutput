@@ -31,7 +31,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 |________||________| |______|  \_____/ |______|\_____/|___|    |______|\_____/
 ==============================================================================
 2016/05/05 by DKZ https://davidkingzyb.github.io
-
+github: https://github.com/davidkingzyb/CLIoutput
 """
 def dobar(c,ispercent=False,type='col',sign=None,unit=''):
     if not sign:
