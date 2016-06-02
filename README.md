@@ -295,6 +295,27 @@ $python testppt.py
 
 ```
 
+##CLIoutput io
+
+see project [wo.io](https://github.com/davidkingzyb/wo.io)
+
+- url http://dkzhome.sinapp.com/clio
+
+- method POST GET
+
+- param
+    - func : dotree
+    - obj : {"a":1,"b":[1,2]}
+
+- response
+
+```
+{
+  "flag": "ok",
+  "output": "\n  |---\"a\":1\n  |---\"b\":\n        |---1\n        |---2\n"
+}
+```
+
 ##License
 
 **MIT**
