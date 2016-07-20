@@ -26,7 +26,7 @@ and do pretty printing in command line
 - [CLIoutput.py](#):a clioutput ppt example
 - [clio-pptinit.py](#):make a clioutput ppt
 
-##USE
+##Usage
 
 ```py
 import clio
