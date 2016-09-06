@@ -33,6 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 2016/05/02 by DKZ https://davidkingzyb.github.io
 github: https://github.com/davidkingzyb/CLIoutput
 """
+from six import iteritems
 import re
 
 def dotabel(tabel,t='row',issplit=False):
@@ -47,7 +48,7 @@ def dotabel(tabel,t='row',issplit=False):
 def tabelcol(tabel):
     maxarr=0
     maxtitle=0
-    for k,v in tabel.iteritems():
+    for k,v in iteritems(tabel):
         if len(v)>maxarr:
             maxarr=len(v)
         if len(str(k))>maxtitle:
@@ -66,7 +67,7 @@ def tabelcol(tabel):
     for x in maxlen:
         hr=hr+'-'+'-'*x+'-+'
     output=hr+'\n'
-    for k,v in tabel.iteritems():
+    for k,v in iteritems(tabel):
         output=output+'| '+str(k)+' '*(maxtitle-len(str(k)))+' ||'
         for j in range(len(maxlen)):
             if j<len(v):
@@ -115,7 +116,7 @@ def tabelrow(tabel):
                 if i==1:
                     lines[i]=lines[i]+str(t)+' '*(maxlen[t]-len(str(t)))+' '
                 else:
-                    ai=(i-1)/2-1
+                    ai=int((i-1)/2-1)
                     if ai<len(arr):
                         lines[i]=lines[i]+str(arr[ai])+' '*(maxlen[t]-len(str(arr[ai])))+' '
                     else:
@@ -123,7 +124,7 @@ def tabelrow(tabel):
                 flag=True
         return lines
     lines=addsplit()
-    for k,v in tabel.iteritems():
+    for k,v in iteritems(tabel):
         lines=addcolumn(k,v)
         lines=addsplit()
     output=''

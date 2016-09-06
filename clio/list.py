@@ -33,6 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 2016/05/02 by DKZ https://davidkingzyb.github.io
 github: https://github.com/davidkingzyb/CLIoutput
 """
+from six import iteritems
 
 def dolist(arr):
     output=''
@@ -44,7 +45,7 @@ def dolist(arr):
         for k in arr.keys():
             if len(str(k))>maxlen:
                 maxlen=len(k)
-        for k,v in arr.iteritems():
+        for k,v in iteritems(arr):
             output=output+str(k)+' '*(maxlen-len(str(k)))+'  :'+str(v)+'\n'
     return output
 

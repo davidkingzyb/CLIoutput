@@ -33,6 +33,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 2016/05/05 by DKZ https://davidkingzyb.github.io
 github: https://github.com/davidkingzyb/CLIoutput
 """
+from six import iteritems
 def dobar(c,ispercent=False,type='col',sign=None,unit=''):
     if not sign:
         if type=='row':
@@ -44,13 +45,13 @@ def dobar(c,ispercent=False,type='col',sign=None,unit=''):
 
     maxk=0
     total=0
-    for k,v in c.iteritems():
+    for k,v in iteritems(c):
         if len(str(k))>maxk:
             maxk=len(str(k))
         total=total+v
 
     if ispercent:
-        for k,v in c.iteritems():
+        for k,v in iteritems(c):
             perv=float(v)/float(total)*100
             c[k]=perv
     output=''
@@ -63,7 +64,7 @@ def dobar(c,ispercent=False,type='col',sign=None,unit=''):
                 maxv=int(v)
         lines=['|  ' for ii in range(maxv)]
         for i in range(len(lines)):
-            for k,v in c.iteritems():
+            for k,v in iteritems(c):
                 if v>maxv-i:
                     lines[i]+=' '+sign+' '+' '*(maxk-2)
                 else:
@@ -78,7 +79,7 @@ def dobar(c,ispercent=False,type='col',sign=None,unit=''):
             output+=' '+str(round(v,2))+' '+' '*(maxk-len(str(round(v))))
 
     elif type=='col':
-        for k,v in c.iteritems():
+        for k,v in iteritems(c):
             output=output+str(k)+' '*(maxk-len(str(k)))+' |  '+sign*int(v)+' '+str(round(v,2))+unit+'\n'
         if unit!='':
             output=output+' unit:'+unit
