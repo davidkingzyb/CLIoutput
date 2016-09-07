@@ -26,6 +26,14 @@ and do pretty printing in command line
 - [CLIoutput.py](#):a clioutput ppt example
 - [clio-pptinit.py](#):make a clioutput ppt
 
+##Install
+
+```
+$ python setup.py sdist
+$ cd dist/clio-1.0
+$ python setup.py install
+```
+
 ##Usage
 
 ```py
