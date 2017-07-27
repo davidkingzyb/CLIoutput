@@ -28,6 +28,12 @@ and do pretty printing in command line
 
 ## Install
 
+use pip
+
+```
+$ pip3 install clioutput
+```
+
 ```
 $ python setup.py sdist
 $ cd dist/clio-1.0

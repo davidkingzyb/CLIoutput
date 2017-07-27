@@ -13,7 +13,7 @@
 https://github.com/davidkingzyb/CLIoutput
 """
 
-from distutils.core import setup
+from setuptools import setup
 
 setup(name='clioutput',
     version='0.1',
@@ -21,8 +21,10 @@ setup(name='clioutput',
     author='davidkingzyb',
     author_email='davidkingzyb@qq.com',
     license='MIT',
-    url='https://github.com/davidkingzyb/CLIoutput'
+    url='https://pypi.python.org/pypi'
     )
 
 # $ python3 setup.py sdist
-# $ python3 setup.py register bdist upload
+
+# $ python3 setup.py sdist bdist_wheel
+# $ twine upload dist/clioutput-0.1-py3-none-any.whl 
