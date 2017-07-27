@@ -15,9 +15,14 @@ https://github.com/davidkingzyb/CLIoutput
 
 from distutils.core import setup
 
-setup(name='clio',
-    version='1.0',
+setup(name='clioutput',
+    version='0.1',
     packages=['clio'],
+    author='davidkingzyb',
+    author_email='davidkingzyb@qq.com',
+    license='MIT',
+    url='https://github.com/davidkingzyb/CLIoutput'
     )
 
-# $python3 setup.py sdist
+# $ python3 setup.py sdist
+# $ python3 setup.py register bdist upload
