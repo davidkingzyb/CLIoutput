@@ -14,7 +14,7 @@ and do pretty printing in command line
 
 ![clio](./clio.gif)
 
-##List
+## List
 
 - [clio](#clio):package
   - [title](#title):a ctfont title
@@ -26,7 +26,7 @@ and do pretty printing in command line
 - [CLIoutput.py](#):a clioutput ppt example
 - [clio-pptinit.py](#):make a clioutput ppt
 
-##Install
+## Install
 
 ```
 $ python setup.py sdist
@@ -34,7 +34,7 @@ $ cd dist/clio-1.0
 $ python setup.py install
 ```
 
-##Usage
+## Usage
 
 ```py
 import clio
@@ -50,7 +50,7 @@ print(clio.dotree(j))
 print(clio.dobar(c))
 ```
 
-###title
+### title
 
 - dotitle(title)
 
@@ -66,7 +66,7 @@ print(clio.dotitle('CLIoutput'))
 |________||________| |______|  \_____/ |______|\_____/|___|    |______|\_____/
 ```
 
-###list
+### list
 
 - dolist(arr)
 
@@ -85,9 +85,18 @@ b    :2
 ccc  :333
 ```
 
-###tabel
+### tabel
 
-- dotabel(tabel,t='row',issplit=False)
+- dotabel(tabel,t='row',issplit=False,isleft=False)
+
+| a    | bbbbbbb | cc | dd |
+|:-----|:--------|:---|:---|
+| 1    | aa      | a  | d  |
+| 222  | 1       |    | dd |
+| 33   | bbbbbbb |    |    |
+| 33   | aa      |    |    |
+| 33   | bb      |    |    |
+| 4444 |         |    |    |
 
 ```
 d={
@@ -98,6 +107,7 @@ d={
   }
 print(clio.dotabel(d))
 print(clio.dotabel(d,'col'))
+print(clio.dotabel(d,'md',isleft=True))
 
 ###################output#####################
 +======+=========+====+====+
@@ -120,9 +130,18 @@ print(clio.dotabel(d,'col'))
 +---------++----+-----+---------+----+----+------+
 | cc      || a  |     |         |    |    |      |
 +---------++----+-----+---------+----+----+------+
+
+| a    | bbbbbbb | cc | dd |
+|:-----|:--------|:---|:---|
+| 1    | aa      | a  | d  |
+| 222  | 1       |    | dd |
+| 33   | bbbbbbb |    |    |
+| 33   | aa      |    |    |
+| 33   | bb      |    |    |
+| 4444 |         |    |    |
 ```
 
-###tree
+### tree
 
 - dojson(j)
 - dotree(j)
@@ -166,7 +185,7 @@ print(clio.dotree(j))
               |---3
 ```
 
-###chart
+### chart
 
 - dobar(c,ispercent=False,type='col',sign=None,unit='')
 
@@ -281,7 +300,7 @@ unit:%
    2.06    11.1   20.55   30.83   14.39   21.07  
 ```
 
-###ppt
+### ppt
 
 try
 
@@ -303,28 +322,8 @@ $python testppt.py
 
 ```
 
-##CLIoutput io
 
-see project [wo.io](https://github.com/davidkingzyb/wo.io)
-
-- url http://dkzhome.sinapp.com/clio
-
-- method POST GET
-
-- param
-    - func : dotree
-    - obj : {"a":1,"b":[1,2]}
-
-- response
-
-```
-{
-  "flag": "ok",
-  "output": "\n  |---\"a\":1\n  |---\"b\":\n        |---1\n        |---2\n"
-}
-```
-
-##License
+## License
 
 **MIT**
 
